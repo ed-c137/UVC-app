@@ -112,11 +112,16 @@ document.getElementById('add-btn').addEventListener('click', function(e){
       let weekval = [];
       let timeval;
       let periodval;
+      let binweeks = [];
+      //let weeks = ['M','Tu','W','Th', 'F','Sa','Su']
       var form = e.currentTarget.parentElement.parentElement;
       form.querySelectorAll('.checkbox-con input').forEach( elm => {   
         if(elm.checked){ 
           week = true; 
-          weekval.push(elm.classList[0]); 
+          binweeks.push(1); //elm.classList[0]
+          weekval.push(elm.classList[0]);
+        }else{
+          binweeks.push(0);
         }
       });
       time = Boolean(form.querySelector('#appt').value);
